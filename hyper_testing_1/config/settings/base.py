@@ -232,15 +232,6 @@ X_FRAME_OPTIONS = "DENY"
 EMAIL_BACKEND = env(
     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
 )
-#########################################################################
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com' 
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'daniel.js.campbell@gmail.com'
-EMAIL_HOST_PASSWORD = 'Dan914478'
-DEFAULT_FROM_EMAIL = 'testing@testing.com'
-########################################################################
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-timeout
 EMAIL_TIMEOUT = 5
 
