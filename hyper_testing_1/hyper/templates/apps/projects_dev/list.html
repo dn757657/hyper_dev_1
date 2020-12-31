@@ -1,0 +1,64 @@
+{% extends "vertical_base.html" %}
+{% load static i18n %}
+
+{% block head_title %}{% trans "Projects" %}{% endblock head_title %}
+
+{% block content %}
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Apps</a></li>
+                            <li class="breadcrumb-item active">Projects</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Projects</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row mb-2">
+            <div class="col-sm-4">
+                <a href="{% url 'apps:projects_dev.add_old'%}" class="btn btn-danger btn-rounded mb-3"><i class="mdi mdi-plus"></i> Create Project</a>
+            </div>
+            <div class="col-sm-8">
+                <div class="text-sm-right">
+                    <div class="btn-group mb-3">
+                        <button type="button" class="btn btn-primary">All</button>
+                    </div>
+                    <div class="btn-group mb-3 ml-1">
+                        <button type="button" class="btn btn-light">Ongoing</button>
+                        <button type="button" class="btn btn-light">Finished</button>
+                    </div>
+                    <div class="btn-group mb-3 ml-2 d-none d-sm-inline-block">
+                        <button type="button" class="btn btn-secondary"><i class="dripicons-view-apps"></i></button>
+                    </div>
+                    <div class="btn-group mb-3 d-none d-sm-inline-block">
+                        <button type="button" class="btn btn-link text-muted"><i class="dripicons-checklist"></i></button>
+                    </div>
+                </div>
+            </div><!-- end col-->
+        </div>
+        <!-- end row-->
+
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <!-- project card -->
+                {% with title='App design and development' status='Finished' description='With supporting text below as a natural lead-in to additional contenposuere erat a ante...' noTasks=21 noComments=741 friendsAvatar1='/static/images/users/avatar-6.jpg' friendsAvatar2='/static/images/users/avatar-7.jpg' friendsAvatar3='/static/images/users/avatar-8.jpg' moreFriends=7 progress=100 %}
+                    {% include 'apps/projects_dev/item.html' %}
+                {% endwith %}
+
+            </div> <!-- end col -->
+
+        </div>
+        <!-- end row-->
+
+    </div> <!-- container -->
+{% endblock %}

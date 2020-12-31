@@ -1,0 +1,81 @@
+{% extends "vertical_base.html" %}
+{% load static i18n %}
+
+{% block head_title %}{% trans "Create Project" %}{% endblock head_title %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+
+{% block content %}
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tags</a></li>
+                            <li class="breadcrumb-item active">Create Tag</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Create Tag</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <form method="POST">
+          {% csrf_token %}
+          <div class="row">
+              <div class="col-12">
+                  <div class="card">
+                      <div class="card-body">
+
+                          <div class="row">
+                              <div class="col-xl-6">
+                                  <div class="form-group">
+
+                                    <label for="{{tag_form.title.id_for_label}}">Tag</label>
+                                    {{tag_form.name}}
+                                    {{tag_form.name.errors}}
+
+                                  </div>
+
+                                  <div class="form-group">
+                                    <input type="submit" class="btn btn-danger btn-rounded" value="Create Tag">
+                                    <!-- <a href="{% url 'apps:projects_dev.list'%}" type="submit" class="btn btn-danger btn-rounded mb-3"><i class="mdi mdi-plus"></i> Submit Project</a> -->
+                                  </div>
+                              </div> <!-- end col-->
+
+                              <div class="col-xl-6">
+                                  <!-- scond column if required -->
+
+                              </div> <!-- end col-->
+                          </div>
+                          <!-- end row -->
+
+                      </div> <!-- end card-body -->
+                  </div> <!-- end card-->
+              </div> <!-- end col-->
+          </div>
+        <!-- end row-->
+        </form>
+
+    </div> <!-- container -->
+{% endblock %}
+
+{% block extra_javascript %}
+
+    <!-- third party js -->
+    <script src="{% static 'js/vendor/dropzone.min.js' %}"></script>
+    <!-- third party js ends -->
+
+    <!-- demo app -->
+    <script src="{% static 'js/ui/component.fileupload.js' %}"></script>
+    <!-- end demo js-->
+
+{% endblock %}

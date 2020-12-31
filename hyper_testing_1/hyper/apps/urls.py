@@ -21,6 +21,11 @@ from .views import (
     apps_projects_gantt_view,
     apps_projects_list_view,
 
+    apps_projects_dev_list_view,
+    apps_projects_dev_add_old_view,
+    apps_projects_dev_add_view,
+    apps_projects_dev_add_tag_view,
+
     apps_social_feed_view,
 
     apps_tasks_details_view,
@@ -66,6 +71,12 @@ urlpatterns = [
     path("projects/gantt", view=apps_projects_gantt_view,
          name="projects.gantt"),
     path("projects/list", view=apps_projects_list_view, name="projects.list"),
+
+    # projects development
+    path("projects_dev/list", view=apps_projects_dev_list_view, name="projects_dev.list"),
+    path("projects_dev/add_old", view=apps_projects_dev_add_old_view, name="projects_dev.add_old"),
+    path("projects_dev/add", apps_projects_dev_add_view, name="projects_dev.add"),
+    path("projects_dev/add_tag", apps_projects_dev_add_tag_view, name='projects_dev.add_tag'),
 
     # social
     path("social/feed", view=apps_social_feed_view, name="social.feed"),

@@ -69,7 +69,7 @@
                     <span class="menu-arrow"></span>
                 </a>
 
-                <!-- examples of links under a drop down that does not redirect -->
+                <!-- examples of links under a drop down that does redirect -->
                 <ul class="side-nav-second-level" aria-expanded="false">
                     <li class="{% if request.resolver_match.url_name == 'apps.ecommerce.products' %}active{% endif %}">
                         <a href="{% url 'apps:ecommerce.products' %}">{% trans "Products" %}</a>
@@ -97,6 +97,32 @@
                     </li>
                 </ul>
             </li>
+
+            <!-- Projects  -->
+            <li class="side-nav-item">
+                <a href="javascript: void(0);" class="side-nav-link">
+                    <i class="uil-store"></i>
+                    <span> {% trans "projects_dev" %} </span>
+                    <span class="menu-arrow"></span>
+                </a>
+
+                <!-- examples of links under a drop down that not redirect -->
+                <ul class="side-nav-second-level" aria-expanded="false">
+                  <li class="{% if request.resolver_match.url_name == 'apps.projects_dev.list' %}active{% endif %}">
+                      <a href="{% url 'apps:projects_dev.list' %}">{% trans "List" %}</a>
+                  </li>
+                  <li class="{% if request.resolver_match.url_name == 'apps.projects_dev.add_old' %}active{% endif %}">
+                      <a href="{% url 'apps:projects_dev.add_old' %}">{% trans "Create Project (Hyper)" %}</a>
+                  </li>
+                  <li class="{% if request.resolver_match.url_name == 'apps.projects_dev.add' %}active{% endif %}">
+                      <a href="{% url 'apps:projects_dev.add' %}">{% trans "Create Project (dev)" %}</a>
+                  </li>
+                  <li class="{% if request.resolver_match.url_name == 'apps.projects_dev.add_tag' %}active{% endif %}">
+                      <a href="{% url 'apps:projects_dev.add_tag' %}">{% trans "Add Tag" %}</a>
+                  </li>
+                </ul>
+            </li>
+            <!-- End Projects -->
 
             <li class="side-nav-item">
                 <a href="javascript: void(0);" class="side-nav-link">
